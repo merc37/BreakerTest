@@ -140,6 +140,10 @@ cd Assets/Private
 read -p "git config --local merge.ff only"
 git config --local merge.ff only
 
+# Pull submodules for PrivateAssets
+read -p "git submodule update --init --recursive"
+git submodule update --init --recursive
+
 # Push addition of submodule to main repo
 read -p "cd $cwd"
 cd "$cwd"
