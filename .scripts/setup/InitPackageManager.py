@@ -23,11 +23,11 @@ if __name__ == '__main__':
 
     # Append to manifest-append.json
     manifest_source = os.path.join(dir, 'manifest-append.json');
-    manifest_target = os.path.join(dir, '..\\Packages\\manifest.json')
+    manifest_target = os.path.join(dir, '..\\..\\Packages\\manifest.json')
     write_json(manifest_source, manifest_target)
 
     # Append to packages-lock.json
     packages_lock_source = os.path.join(dir, 'packages-lock-append.json');
-    packages_lock_target = os.path.join(dir, '..\\Packages\\packages-lock.json')
+    packages_lock_target = os.path.join(dir, '..\\..\\Packages\\packages-lock.json')
     write_json(packages_lock_source, packages_lock_target)
 
