@@ -111,6 +111,10 @@ read -p "git config --local submodule.recurse true"
 git config --local submodule.recurse true
 read -p "git remote rm upstream"
 git remote rm upstream
+read -p "git add ."
+git add .
+read -p "git commit -m "Initial Commit""
+git commit -m "Initial Commit"
 read -p "git push --set-upstream origin main"
 git push --set-upstream origin main
 
@@ -145,12 +149,12 @@ read -p "cd $UnversionedTargetDir/Unversioned"
 cd $UnversionedTargetDir/Unversioned
 read -p "git init -b main"
 git init -b main
-read -p "hub create -p $OwnerGitHubUserName/Unversioned"
-hub create -p $OwnerGitHubUserName/Unversioned
+read -p "hub create -p $OwnerGitHubUserName/$NewProjectName-Unversioned"
+hub create -p $OwnerGitHubUserName/$NewProjectName-Unversioned
 read -p "git remote rm origin"
 git remote rm origin
-read -p "git remote add origin https://github.com/djc5627/Unversioned.git"
-git remote add origin https://github.com/djc5627/Unversioned.git
+read -p "git remote add origin https://github.com/djc5627/$NewProjectName-Unversioned.git"
+git remote add origin https://github.com/djc5627/$NewProjectName-Unversioned.git
 
 # Pull from Unversioned template into fork and push to new repo
 read -p "git remote add upstream https://github.com/bowlmonkeylabs/UnityTemplate-Unversioned"
