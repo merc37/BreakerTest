@@ -105,10 +105,18 @@ read -p "git remote add upstream https://github.com/bowlmonkeylabs/UnityTemplate
 git remote add upstream https://github.com/bowlmonkeylabs/UnityTemplate-PrivateAssets
 read -p "git config --local submodule.recurse false"
 git config --local submodule.recurse false
-read -p "git pull --rebase upstream main"
-git pull --rebase upstream main
+read -p "git lfs install --skip-smudge --local"
+git lfs install --skip-smudge --local
+read -p "git pull --rebase --recurse-submodules upstream main"
+git pull --rebase --recurse-submodules upstream main
+read -p "git lfs pull upstream main"
+git lfs pull upstream main
+read -p "git submodule update --init --recursive"
+git submodule update --init --recursive
 read -p "git config --local submodule.recurse true"
 git config --local submodule.recurse true
+read -p "git lfs fetch --all upstream"
+git lfs fetch --all upstream
 read -p "git remote rm upstream"
 git remote rm upstream
 read -p "git add ."
