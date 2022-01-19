@@ -155,10 +155,10 @@ read -p "git push"
 git push
 
 #  Create new Unversioned repo fork in UnversionedTargetDir
-read -p "mkdir $UnversionedTargetDir/Unversioned"
-mkdir $UnversionedTargetDir/Unversioned
-read -p "cd $UnversionedTargetDir/Unversioned"
-cd $UnversionedTargetDir/Unversioned
+read -p "mkdir $UnversionedTargetDir/$NewProjectName-Unversioned"
+mkdir $UnversionedTargetDir/$NewProjectName-Unversioned
+read -p "cd $UnversionedTargetDir/$NewProjectName-Unversioned"
+cd $UnversionedTargetDir/$NewProjectName-Unversioned
 read -p "git init -b main"
 git init -b main
 read -p "hub create -p $OwnerGitHubUserName/$NewProjectName-Unversioned"
@@ -195,8 +195,8 @@ read -p "./INIT-ANNEX.sh $NewProjectName"
 # Make symLink in Assets folder pointing to this forked repo
 read -p "cd $cwd"
 cd "$cwd"
-read -p "./.scripts/setup/CreateSymLink.sh "Assets\Unversioned" "$UnversionedTargetDir/Unversioned""
-./.scripts/setup/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/Unversioned"
+read -p "./.scripts/setup/CreateSymLink.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned""
+./.scripts/setup/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned"
 
 #Init Package Manager Assets
 read -p "python .scripts/setup/InitPackageManager.py"
