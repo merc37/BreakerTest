@@ -6,7 +6,6 @@ using MyAssets.ScriptableObjects.Events;
 using MyAssets.ScriptableObjects.Variables;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using XNode;
