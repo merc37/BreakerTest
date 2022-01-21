@@ -69,8 +69,8 @@ read -p "./INIT-ANNEX.sh $NewProjName"
 # Make symLink in Assets folder pointing to this forked repo
 read -p "cd $cwd"
 cd "$cwd"
-read -p "./.scripts/setup/CreateSymLink.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjName-Unversioned""
-./.scripts/setup/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjName-Unversioned"
+read -p "./.scripts/setup/lib/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjName-Unversioned""
+./.scripts/setup/lib/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjName-Unversioned"
 
 # Exit Script
 echo "Press Enter to exit..."

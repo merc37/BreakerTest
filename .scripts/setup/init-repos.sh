@@ -195,12 +195,12 @@ read -p "./INIT-ANNEX.sh $NewProjectName"
 # Make symLink in Assets folder pointing to this forked repo
 read -p "cd $cwd"
 cd "$cwd"
-read -p "./.scripts/setup/CreateSymLink.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned""
-./.scripts/setup/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned"
+read -p "./.scripts/setup/lib/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned""
+./.scripts/setup/lib/create-sym-link.sh "Assets\Unversioned" "$UnversionedTargetDir/$NewProjectName-Unversioned"
 
-#Init Package Manager Assets
-read -p "python .scripts/setup/InitPackageManager.py"
-python .scripts/setup/InitPackageManager.py
+# Init Package Manager Assets
+read -p "python .scripts/setup/lib/init-package-manager.py"
+python .scripts/setup/lib/init-package-manager.py
 
 # Exit Script
 echo "Press Enter to exit..."
