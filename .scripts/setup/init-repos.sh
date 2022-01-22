@@ -51,8 +51,8 @@ read -p "hub create $OwnerGitHubUserName/$NewProjectName"
 hub create $OwnerGitHubUserName/$NewProjectName
 read -p "git remote rm origin"
 git remote rm origin
-read -p "git remote add origin https://github.com/djc5627/$NewProjectName.git"
-git remote add origin https://github.com/djc5627/$NewProjectName.git
+read -p "git remote add origin https://github.com/$OwnerGitHubUserName/$NewProjectName.git"
+git remote add origin https://github.com/$OwnerGitHubUserName/$NewProjectName.git
 read -p "git config --local merge.ff only"
 git config --local merge.ff only
 read -p "git config --local submodule.recurse true"
