@@ -63,8 +63,8 @@ read -p "cd $UnversionedTargetDir/$NewProjName-Unversioned"
 cd $UnversionedTargetDir/$NewProjName-Unversioned
 
 # Run script to init the Annex
-read -p "./INIT-ANNEX.sh $NewProjName"
-./INIT-ANNEX.sh $NewProjName
+read -p "./.scripts/connect-annex.sh $NewProjName"
+"./.scripts/connect-annex.sh" $NewProjName
 
 # Make symLink in Assets folder pointing to this forked repo
 read -p "cd $cwd"

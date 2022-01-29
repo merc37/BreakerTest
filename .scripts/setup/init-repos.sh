@@ -183,8 +183,8 @@ read -p "git push --set-upstream origin main"
 git push --set-upstream origin main
 
 # Run script to init the Annex
-read -p "./INIT-ANNEX.sh $NewProjectName"
-./INIT-ANNEX.sh $NewProjectName
+read -p "./.scripts/setup/create-annex.sh $NewProjectName"
+"./.scripts/setup/create-annex.sh" $NewProjectName
 
 # Init the annex
 # read -p "git annex init "$AnnexRemoteName" "
