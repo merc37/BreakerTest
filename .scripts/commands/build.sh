@@ -7,7 +7,9 @@ function src_exec() { (cd "$src_dir"; $1) }
 
 # Arguments ---------------------------------------------------------
 project_path=$(cd "$src_dir"; realpath "../..")
-unity_path="/c/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Unity.exe"
+project_unity_version=$(cd "$project_path"; "./.scripts/lib/get-unity-editor-version.sh")
+
+unity_path="/c/Program Files/Unity/Hub/Editor/$project_unity_version/Editor/Unity.exe"
 
 # Execute -----------------------------------------------------------
 "$unity_path" \
