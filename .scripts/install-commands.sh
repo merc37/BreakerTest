@@ -8,7 +8,7 @@ function src_exec() { (cd "$src_dir"; eval $1) }
 src_source ./lib/ask.sh
 
 # Arguments ---------------------------------------------------------
-root_dir=$(src_realpath "./")
+root_dir=$(src_realpath "../")
 commands_reldir="./.scripts/commands"
 commands_dir=$(cd "$root_dir"; realpath "$commands_reldir")
 commands_dir_name=$(basename "$commands_dir")
