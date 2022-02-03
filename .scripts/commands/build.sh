@@ -18,7 +18,7 @@ else
     exit 1
 fi
 unity_editor_executable_relpath="./$project_unity_version/Editor/Unity.exe"
-if (cd "$unity_editor_install_path"; test -d "$unity_editor_executable_relpath")
+if (cd "$unity_editor_install_path"; test "$unity_editor_executable_relpath")
 then
     unity_editor_executable_path=$(cd "$unity_editor_install_path"; realpath "$unity_editor_executable_relpath")
 else
