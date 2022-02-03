@@ -9,10 +9,25 @@ function src_exec() { (cd "$src_dir"; $1) }
 project_path=$(cd "$src_dir"; realpath "../..")
 project_unity_version=$(cd "$project_path"; "./.scripts/lib/get-unity-editor-version.sh")
 
-unity_path="/c/Program Files/Unity/Hub/Editor/$project_unity_version/Editor/Unity.exe"
+unity_editor_install_path=$(src_exec ../lib/get-unity-editor-install-path.sh)
+if test -d "$unity_editor_install_path"
+then
+    echo ""
+else
+    echo "Unity editor install path not found."
+    exit 1
+fi
+unity_editor_executable_relpath="./$project_unity_version/Editor/Unity.exe"
+if (cd "$unity_editor_install_path"; test -d "$unity_editor_executable_relpath")
+then
+    unity_editor_executable_path=$(cd "$unity_editor_install_path"; realpath "$unity_editor_executable_relpath")
+else
+    echo "Unity Editor matching the project version not found. Aborting..."
+    exit 1
+fi
 
 # Execute -----------------------------------------------------------
-"$unity_path" \
+"$unity_editor_executable_path" \
     -projectPath "$project_path" \
     -quit -batchmode \
     -logfile - \
